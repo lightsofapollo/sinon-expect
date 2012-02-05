@@ -1,0 +1,32 @@
+{
+  "name": "sinon-expect",
+  "version": "0.0.1",
+  "author": "James Lal <james@lightsofapollo.com>",
+  "description": "Expect matchers for sinon",
+  "main": "./lib/sinon-expect",
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lightsofapollo/sinon-expect/"
+  },
+
+  "keywords": [
+    "spec",
+    "mocha",
+    "sinon"
+  ],
+
+  "devDependencies": {
+    "mocha"    :  "*",
+    "expect.js"    :  "*",
+    "sinon": "~1.3",
+    "projstrap": "*"
+  },
+
+  "license": "MIT",
+  "engine": {
+    "node": ">=0.4"
+  }
+}
+
+
