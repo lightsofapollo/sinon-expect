@@ -12,13 +12,14 @@
 
   "keywords": [
     "spec",
-    "mocha",
+    "expect",
     "sinon"
   ],
 
   "devDependencies": {
     "mocha"    :  "*",
     "expect.js"    :  "*",
+    "sinon-mocha": "*",
     "sinon": "~1.3",
     "projstrap": "*"
   },
