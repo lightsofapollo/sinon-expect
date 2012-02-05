@@ -11,7 +11,11 @@ var object = {
 
 //Yes we are overriding expect
 //You can also save it to another variable but that is ugly
+//You can also pass a thrid argument to specify the namespace on expect
 expect = require('sinon-expect').enhance(expect, sinon);
+//expect = require('sinon-expect').enhance(expect, sinon, 'was');
+//if you used the above the call would be
+`expect(object.method).was.called()`
 
 sinon.spy(object, 'method');
 

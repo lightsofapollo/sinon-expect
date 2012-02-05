@@ -4,8 +4,7 @@ var SinonExpect = require('../lib/sinon-expect'),
 //Before enhance
 sinon.spy(SinonExpect, 'buildMatchers');
 
-newExpect = SinonExpect.enhance(expect, sinon);
-
+newExpect = SinonExpect.enhance(expect, sinon, 'was');
 
 describe("sinon-expect", function(){
 
@@ -39,13 +38,13 @@ describe("sinon-expect", function(){
       expect(subject.to).to.be.a(expect.Assertion);
     });
 
-    it("should contain new .spy flag", function(){
-      expect(subject.spy).to.be.a(SinonExpect.SinonAssertions);
+    it("should contain new .was flag", function(){
+      expect(subject.was).to.be.a(SinonExpect.SinonAssertions);
     });
 
-    it("should initialize new .spy flag with obj", function(){
+    it("should initialize new .was flag with obj", function(){
       expect(subject.obj).to.be(obj);
-      expect(subject.spy.obj).to.be(subject.obj);
+      expect(subject.was.obj).to.be(subject.obj);
     });
 
     it("should invoke buildMatchers", function(){
@@ -68,12 +67,12 @@ describe("sinon-expect", function(){
             });
           });
 
-          it("should exist as a method on .spy", function(){
-            expect(subject.spy[matcher]).to.be.a('function');
+          it("should exist as a method on .was", function(){
+            expect(subject.was[matcher]).to.be.a('function');
           });
 
           it("should invoke method on sinon.assert." + matcher, function(){
-            newExpect(subject.obj).spy[matcher]('foo', 'bar');
+            newExpect(subject.obj).was[matcher]('foo', 'bar');
             expect(sinon.assert[matcher].calledWithExactly(
               obj,
               'foo',
@@ -98,14 +97,14 @@ describe("sinon-expect", function(){
 
     it("should work on .called", function(){
       try {
-        newExpect(obj.fn).spy.called();
+        newExpect(obj.fn).was.called();
       } catch(e){
         expect(e.name).to.be('AssertError');
       }
 
       obj.fn();
 
-      newExpect(obj.fn).spy.called();
+      newExpect(obj.fn).was.called();
     });
 
     it("should not have screwed up expect", function(){
