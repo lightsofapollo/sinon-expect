@@ -17,7 +17,7 @@
   ],
 
   "devDependencies": {
-    "mocha"    :  "*",
+    "mocha"    :  "~1.2",
     "expect.js"    :  "*",
     "sinon-mocha": "*",
     "sinon": "~1.3",
