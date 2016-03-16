@@ -1,6 +1,6 @@
 {
   "name": "sinon-expect",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": "James Lal <james@lightsofapollo.com>",
   "description": "Expect matchers for sinon",
   "main": "./lib/sinon-expect",
